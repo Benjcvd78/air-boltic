@@ -1,0 +1,1 @@
+-- Code to join the customers and customer_groups tables and return the customer profile

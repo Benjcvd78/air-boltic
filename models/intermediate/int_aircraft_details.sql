@@ -1,0 +1,1 @@
+-- Code to join the aircraft and aircraft_specs tables and return the aircraft details

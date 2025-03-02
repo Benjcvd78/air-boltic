@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Raw data from our S3 data lake"
+    database: aws_s3_database
+    schema: s3_external_schema 
+    tables:
+      - name: order
+        description: "Raw orders data from S3 bucket"
+        external:
+          location: "s3://relevant-bucket/orders/"
+          file_format: csv  # Could be something else
+        columns:
+          - name: order_id
+            description: "Unique identifier of an order"
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "Unique identifier of a customer"
+            tests:
+              - not_null
+          - name: trip_id
+            description: "Unique identifier of a trip"
+            tests:
+              - not_null
+          - name: price
+            description: "Price of the order in euros"
+          - name: seat_no
+            description: "Seat number of the order"
+          - name: status
+            description: "Current status of the order"
+      - name: trip
+      - name: customer
+      - name: customer_group
+      - name: aeroplane_model
+      - name: aeroplane

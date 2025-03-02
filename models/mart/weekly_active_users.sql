@@ -1,0 +1,1 @@
+{{ active_users_by_period('week') }} 
